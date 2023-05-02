@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,300,500,600");
+
+/*Style Guide*/
+:root {
+  --black: rgba(0, 0, 0, 1);
+  --japonica: rgba(221, 125, 98, 1);
+  --peach-cream: rgba(255, 240, 217, 1);
+  --white: rgba(255, 255, 255, 1);
+
+  --font-size-s: 24px;
+  --font-size-m: 32px;
+  --font-size-l: 40px;
+  --font-size-xl: 48px;
+  --font-size-xxl: 64px;
+  --font-size-xxxl: 80px;
+
+  --font-family-poppins: "Poppins";
+}
+
+* {
+  border: 0;
+  margin: 0;
+}
+
+.hidden,
+.hidden * {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.header {
+  align-items: center;
+  background-color: var(--peach-cream);
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  position: relative;
+  border: 0px;
+  width: 100%;
+}
+
+.sections {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  width: 35vw;
+  padding-left: 15vw;
+}
+
+nav {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  text-decoration: none;
+  padding-right: 4vw;
+  color: var(--black);
+}
+
+.titleBacheca {
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxl);
+  font-weight: 400;
+  letter-spacing: 0;
+  position: relative;
+  width: fit-content;
+  padding-left: 2vw;
+  width: 47vw;
+}
+
+.getStartedbtn {
+  background-color: var(--japonica);
+  color: var(--white);
+  border-radius: 6px;
+  cursor: pointer;
+  height: auto;
+  position: relative;
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  font-weight: 300;
+  height: 6vh;
+  width: 10vw;
+}
+
+.getStartedbtn:hover {
+  background-color: #ff815e;
+}
+
+.section1 {
+  align-items: flex-start;
+  background-color: var(--peach-cream);
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 100%;
+}
+
+.titleSection1 {
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxl);
+  font-weight: 600;
+  display: flex;
+  justify-content: left;
+}
+
+.content1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding-top: 3vh;
+}
+
+.imgAnteprima {
+  display: flex;
+  position: relative;
+  height: 90%;
+  padding-left: 3vw;
+  object-fit: cover;
+}
+
+.boxdesc {
+  align-items: center;
+  height: 30vh;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  padding-right: 3vw;
+  flex-direction: column;
+}
+
+.descrizioneSection1 {
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  font-weight: 400;
+  position: relative;
+  margin-left: 3vw;
+}
+
+.spacer {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: fit-content;
+}
+
+.spacer2 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.contenuto {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 30vh;
+}
+
+.titoloSpacer {
+  line-height: normal;
+  position: relative;
+  width: fit-content;
+  color: var(--japonica);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxl);
+  font-weight: 600;
+  justify-content: center;
+  padding-top: 5vh;
+}
+
+.descSpacer {
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  font-weight: 300;
+  text-align: center;
+  display: flex;
+  height: 20vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}

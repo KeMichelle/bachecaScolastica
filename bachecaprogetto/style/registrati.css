@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,300,500,600");
+
+/*Style Guide*/
+:root {
+  --black: rgba(0, 0, 0, 1);
+  --japonica: rgba(221, 125, 98, 1);
+  --peach-cream: rgba(255, 240, 217, 1);
+  --white: rgba(255, 255, 255, 1);
+
+  --font-size-s: 24px;
+  --font-size-m: 32px;
+  --font-size-l: 40px;
+  --font-size-xl: 48px;
+  --font-size-xxl: 64px;
+  --font-size-xxxl: 80px;
+
+  --font-family-poppins: "Poppins";
+}
+
+* {
+  border: 0;
+  margin: 0;
+}
+
+.hidden,
+.hidden * {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.header {
+  align-items: center;
+  background-color: var(--peach-cream);
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  position: relative;
+  border: 0px;
+  width: 100%;
+}
+
+.sections {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  width: 35vw;
+  padding-left: 15vw;
+}
+
+nav {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  text-decoration: none;
+  padding-right: 4vw;
+  color: var(--black);
+}
+
+.titleBacheca {
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxl);
+  font-weight: 400;
+  letter-spacing: 0;
+  position: relative;
+  width: fit-content;
+  padding-left: 2vw;
+  width: 47vw;
+}
+
+.getStartedbtn {
+  background-color: var(--japonica);
+  color: var(--white);
+  border-radius: 6px;
+  cursor: pointer;
+  height: auto;
+  position: relative;
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  font-weight: 300;
+  height: 6vh;
+  width: 10vw;
+}
+
+.getStartedbtn:hover {
+  background-color: #ff815e;
+}
+
+.container {
+  padding-top: 5vh;
+  align-items: flex-start;
+  background-color: var(--peach-cream);
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 85vh;
+}
+
+.imgBox {
+  display: flex;
+  position: relative;
+  height: 100%;
+  padding-left: 3vw;
+}
+
+.imgReg {
+  display: flex;
+  position: relative;
+  height: 90%;
+  width: auto;
+  object-fit: cover;
+}
+
+.formBox {
+  padding-left: 2vw;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.formtitle {
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+}
+
+.titleText {
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  font-weight: 500;
+  position: relative;
+  width: fit-content;
+}
+
+.line1 {
+  position: relative;
+  object-fit: cover;
+}
+
+.formContent {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+}
+
+.buttonsBox {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  padding-right: 2vw;
+}
+
+input[type="text"],
+[type="password"],
+[type="email"] {
+  padding-left: 5vw;
+  border-radius: 10px;
+  padding: 5px;
+  height: 2vh;
+  width: 90%;
+}
+
+input[type="submit"] {
+  background-color: var(--japonica);
+  color: var(--white);
+  border-radius: 6px;
+  cursor: pointer;
+  height: auto;
+  position: relative;
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  font-weight: 300;
+  height: 6vh;
+  width: 10vw;
+}
+
+button[type="button"] {
+  background-color: var(--japonica);
+  color: var(--white);
+  border-radius: 6px;
+  cursor: pointer;
+  height: auto;
+  position: relative;
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  font-weight: 300;
+  height: 6vh;
+  width: 10vw;
+}
