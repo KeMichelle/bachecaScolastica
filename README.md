@@ -1,4 +1,4 @@
-# bachecaScolastica
+# bachecaScolastica 🌿
 
 
 Il mio progetto scolastico utilizza le tecnologie di HTML, CSS, SQL, JavaScript e PHP per creare una piattaforma web che permette agli utenti di registrarsi, accedere con le loro credenziali, pubblicare e modificare i propri "post", ovvero dei commenti sulla pagina.
