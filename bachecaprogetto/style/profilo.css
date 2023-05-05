@@ -238,10 +238,8 @@ button {
   width: 30vw;
 }
 
-.contenuto a {
-  text-decoration: none;
-  color: var(--japonica);
-  font-size: var(--font-size-s);
+.contenuto p {
+  padding-left: 3%;
 }
 
 .post-icons {

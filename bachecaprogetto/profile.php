@@ -64,10 +64,10 @@
               </div>
               <div class="post-icons">
                 <button type="button" id="deletebtn">
-                  <img src="img/Delete.png" alt="delete post">
+                  <img src="img/Delete.svg" alt="delete post">
                 </button>
                 <button type="button" id="editbtn">
-                  <img src="img/edit.png" alt="edit post">
+                  <img src="img/edit.svg" alt="edit post">
                 </button>
               </div>
             </div>
