@@ -32,9 +32,9 @@
 
     //connessione al database con SQL
     $servername= "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "bacheca";
+    $username = "icib_admin";
+    $password = "0987654321";
+    $dbname = "utenti";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     if($conn->connect_error){
@@ -49,7 +49,7 @@
 
 
 // Inserisci i dati dentro il database
-      $stmt = $conn->prepare("INSERT INTO post (titolo, contenuto, time, utente) VALUES(?, ?, NOW(), ?)");
+      $stmt = $conn->prepare("INSERT INTO post (titolo, contenuto, time, id_utente) VALUES(?, ?, NOW(), ?)");
       $stmt->bind_param("sss", $titolo, $commento, $utente);
       $stmt->execute();
 

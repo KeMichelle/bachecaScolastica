@@ -32,7 +32,7 @@
       
     <?php
     session_start();
-    echo $_SESSION['username'] . ' ' .  $_SESSION['id_utente'];
+   
 
     if(isset($_SESSION['username'])==false){
       echo("Devi fare il login!");
@@ -51,25 +51,37 @@
       </div>
     </div>
   </div>
+
+  <div class="spacer">
+      <div class="boxSpacer">
+        <h1 class="titoloSpacer">Post Recenti</h1>
+        <p class="descSpacer">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud.
+        </p>
+      </div>
+    </div>
 ';
 echo $pag;
 
-      $connessione = "mysql:host=localhost;dbname=bacheca;port=3306";
+      $connessione = "mysql:host=localhost;dbname=utenti;port=3306";
 
       try{
-        $pdo = new PDO($connessione, 'root', '');
-        $sql='SELECT titolo,contenuto,utente FROM post';
+        $pdo = new PDO($connessione, 'icib_admin', '0987654321');
+        $sql='SELECT titolo,contenuto,id_utente FROM post';
         $stm = $pdo->prepare($sql);
         $stm -> execute();
         
+        //prendi tutto dal database
         $ris = $stm->fetchAll(PDO::FETCH_ASSOC);
 
-        //print_r($ris);
+        //si capisce
         foreach($ris as $post){
           ?>
           <div class="body-b">
           <div class="postbox">
-          <div class="utente"><?php echo $post['utente']; ?> </div>
+          <div class="utente"><?php echo $post['id_utente']; ?> </div>
           <h2 class="titolo-box"><?php echo $post['titolo']; ?></h2>
           <div class="contenuto">
             <p><?php echo $post['contenuto']; ?></p>
@@ -82,18 +94,9 @@ echo $pag;
       }
       catch(PDOException $errore){
         echo $errore;
-
       }
-
-
-
-      
     }
     ?>
-
-    
-
-   
 
     <script src="./scripts/getStarted.js"></script>
   </body>

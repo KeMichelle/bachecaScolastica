@@ -20,6 +20,7 @@
 * {
   border: 0;
   margin: 0;
+  font-family: var(--font-family-poppins);
 }
 
 .hidden,
@@ -150,22 +151,15 @@ nav a {
 }
 
 .spacer {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: fit-content;
-}
-
-.spacer2 {
   align-items: center;
   display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
+  padding-bottom: 5vh;
 }
 
-.contenuto {
+.boxSpacer {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -201,13 +195,13 @@ nav a {
 .body-b {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 15vw;
+  grid-gap: 10%;
   width: 100%;
   height: fit-content;
 }
 
 .postbox {
-  padding-left: 15%;
+  padding-left: 30%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -241,6 +235,11 @@ nav a {
   color: var(--black);
   font-weight: 300;
   display: flex;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 30vw;
 }
 
 .contenuto a {

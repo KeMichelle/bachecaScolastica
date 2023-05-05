@@ -19,6 +19,7 @@
 }
 
 * {
+  font-family: var(--font-family-poppins);
   border: 0;
   margin: 0;
 }

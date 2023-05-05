@@ -37,8 +37,47 @@
         echo '<div class="username">';
         echo $_SESSION['username'] . '</div>';
         echo '</div>';
-    }
-    ?>
+
+        $connessione = "mysql:host=localhost;dbname=utenti;port=3306";
+
+        try{
+          $pdo = new PDO($connessione, 'icib_admin', '0987654321');
+
+          //l'id utente
+          $current_id = $_SESSION['id_utente'];
+
+          //query dove prende l'id
+          $sql="SELECT titolo,contenuto,id_utente FROM post WHERE id_utente = :current_id";
+          $stm = $pdo->prepare($sql);
+
+          //prende l'id e lo esegue
+          $stm->execute(array(':current_id' => $current_id));
+    
+          
+          //prendi tutto dal database
+          $ris = $stm->fetchAll(PDO::FETCH_ASSOC);
+          foreach($ris as $post){
+            ?>
+            <div class="body-b">
+            <div class="postbox">
+            <div class="utente"><?php echo $post['id_utente']; ?> </div>
+            <h2 class="titolo-box"><?php echo $post['titolo']; ?></h2>
+            <div class="contenuto">
+              <p><?php echo $post['contenuto']; ?></p>
+              <p><a href="#">Leggi di più &raquo;</a></p>
+            </div>
+          </div>  
+          <?php
+                
+          }
+        }
+        catch(PDOException $errore){
+          echo $errore;
+        }
+      }
+      ?>
+    
+    
    
   </body>
 </html>
