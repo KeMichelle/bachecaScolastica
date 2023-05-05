@@ -17,10 +17,10 @@
       <div class="sections">
         <nav>
           <ul>
-            <li><a href="bacheca.php">Blog</a></li>
-            <li><a href="post.php">Post</a></li>
+            <li><a href="../bacheca.php">Blog</a></li>
+            <li><a href="../post.php">Post</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="profile.php">Profilo</a></li>
+            <li><a href="../profile.php">Profilo</a></li>
           </ul>
         </nav>
       </div>

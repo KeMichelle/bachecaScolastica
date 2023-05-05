@@ -17,7 +17,7 @@
       <div class="sections">
         <nav>
           <ul>
-            <li><a href="../bacheca.html">Blog</a></li>
+            <li><a href="../bacheca.php">Blog</a></li>
             <li><a href="#">About</a></li>
             <li>
               <button id="getStartedbtn" class="getStartedbtn">
