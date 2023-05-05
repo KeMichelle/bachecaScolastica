@@ -186,3 +186,66 @@ button {
   justify-content: center;
   display: flex;
 }
+
+.body-b {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10%;
+  width: 100%;
+  height: fit-content;
+}
+
+.postbox {
+  padding-left: 30%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: fit-content;
+  margin: 30px;
+}
+
+.utente {
+  position: relative;
+  align-items: flex-start;
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  color: var(--japonica);
+  font-weight: 500;
+}
+
+.titolo-box {
+  position: relative;
+  align-items: flex-start;
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  color: var(--japonica);
+  font-weight: 500;
+}
+
+.contenuto {
+  position: relative;
+  align-items: flex-start;
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  color: var(--black);
+  font-weight: 300;
+  display: flex;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 30vw;
+}
+
+.contenuto a {
+  text-decoration: none;
+  color: var(--japonica);
+  font-size: var(--font-size-s);
+}
+
+.post-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
