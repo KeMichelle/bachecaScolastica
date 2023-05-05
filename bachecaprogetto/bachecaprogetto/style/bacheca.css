@@ -197,3 +197,55 @@ nav a {
   padding-left: 5vw;
   padding-right: 5vw;
 }
+
+.body-b {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  height: fit-content;
+}
+
+.postbox {
+  padding-left: 15%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 25vw;
+  height: fit-content;
+}
+
+.utente {
+  position: relative;
+  align-items: flex-start;
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  color: var(--japonica);
+  font-weight: 500;
+}
+
+.titolo-box {
+  position: relative;
+  align-items: flex-start;
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  color: var(--japonica);
+  font-weight: 500;
+}
+
+.contenuto {
+  position: relative;
+  align-items: flex-start;
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  color: var(--black);
+  font-weight: 300;
+  display: flex;
+}
+
+.contenuto a {
+  text-decoration: none;
+  color: var(--japonica);
+  font-size: var(--font-size-s);
+}

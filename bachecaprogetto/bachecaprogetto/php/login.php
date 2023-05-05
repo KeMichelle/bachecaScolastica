@@ -33,9 +33,9 @@
 
     // conettiti al database
     $servername = "localhost";
-    $username = "icib_admin";
-    $password = "0987654321";
-    $dbname = "utenti";
+    $username = "root";
+    $password = "";
+    $dbname = "bacheca";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
@@ -52,7 +52,7 @@
     }
 
 
-    $stmt = $conn->prepare("SELECT password FROM utenti_info WHERE username = ?");
+    $stmt = $conn->prepare("SELECT password,id FROM utenti_info WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
 
@@ -65,6 +65,7 @@
     if (password_verify($password, $password_hashed)) {
         // password uguale, log in l'utente e mandalo sulla bacheca.
         $_SESSION['username'] = $username; // salva l'username nella sessione
+        $_SESSION['id_utente'] = $row['id'];
         header("Location: ../bacheca.php"); // mandalo sulla pagina dela bacheca
   } else {
         // password incorretta

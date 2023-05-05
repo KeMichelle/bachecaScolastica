@@ -32,6 +32,8 @@
       
     <?php
     session_start();
+    echo $_SESSION['username'] . ' ' .  $_SESSION['id_utente'];
+
     if(isset($_SESSION['username'])==false){
       echo("Devi fare il login!");
       echo "<button onclick=\"location.href='failogin.php'\">Vai al login</button>";
@@ -51,14 +53,45 @@
   </div>
 ';
 echo $pag;
+
+      $connessione = "mysql:host=localhost;dbname=bacheca;port=3306";
+
+      try{
+        $pdo = new PDO($connessione, 'root', '');
+        $sql='SELECT titolo,contenuto,utente FROM post';
+        $stm = $pdo->prepare($sql);
+        $stm -> execute();
+        
+        $ris = $stm->fetchAll(PDO::FETCH_ASSOC);
+
+        //print_r($ris);
+        foreach($ris as $post){
+          ?>
+          <div class="body-b">
+          <div class="postbox">
+          <div class="utente"><?php echo $post['utente']; ?> </div>
+          <h2 class="titolo-box"><?php echo $post['titolo']; ?></h2>
+          <div class="contenuto">
+            <p><?php echo $post['contenuto']; ?></p>
+            <p><a href="#">Leggi di più &raquo;</a></p>
+          </div>
+        </div>  
+        <?php
+              
+        }
+      }
+      catch(PDOException $errore){
+        echo $errore;
+
+      }
+
+
+
+      
     }
     ?>
 
-     
-
-    <!--spacer-->
-
-    <!--bacheca con i post-->
+    
 
    
 

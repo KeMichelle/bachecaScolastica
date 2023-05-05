@@ -45,6 +45,7 @@
     <div class="boxgrid">
     <div class="formgrid">
     <form action="../bachecaprogetto/php/postato.php" method="post">
+      
       <label for="title">Title:</label>
       <input type="text" id="titolo" name="titolo" required>
       <br><br>

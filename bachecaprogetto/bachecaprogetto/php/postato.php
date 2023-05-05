@@ -32,9 +32,9 @@
 
     //connessione al database con SQL
     $servername= "localhost";
-    $username = "icib_admin";
-    $password = "0987654321";
-    $dbname = "utenti";
+    $username = "root";
+    $password = "";
+    $dbname = "bacheca";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     if($conn->connect_error){
@@ -43,29 +43,29 @@
     
     //prendi il submit dal form
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $utente = $_POST['id_utente'];
+        $utente = $_SESSION['id_utente'];
         $titolo = $_POST["titolo"];
         $commento = $_POST["commento"];
-        $time = date("Y-m-d H:i:s");
-
-        $query = "SELECT id FROM utenti_info WHERE id_utente= $utente";
-        $result = mysqli_query($conn, $query);
-    
-        if (mysqli_num_rows($result) == 1) {
-            $row = mysqli_fetch_assoc($result);
-            $id_utente = $row['id'];
 
 
-        // Inserisci i dati dentro il database
-        $sql = "INSERT INTO post (utente, titolo, contenuto, time) VALUES ('$id_utente', '$titolo', '$commento', NOW())";
-        if (mysqli_query($conn, $sql)) {
-            echo "Postato!";
-            echo "<button class='bottone' onclick=\"location.href='../bacheca.php'\">Torna sulla bacheca</button>";
-     }  else {
-            echo "Errore: " . $sql . "<br>" . mysqli_error($conn);
-     }
+// Inserisci i dati dentro il database
+      $stmt = $conn->prepare("INSERT INTO post (titolo, contenuto, time, utente) VALUES(?, ?, NOW(), ?)");
+      $stmt->bind_param("sss", $titolo, $commento, $utente);
+      $stmt->execute();
+
+      if($stmt-> affected_rows > 0){
+        echo "Postato!";
+        echo "<button class='bottone' onclick=\"location.href='../bacheca.php'\">Torna sulla bacheca</button>";
+    }
+    else{
+        echo "Post fallito.";
+    }
+
    }
-}
+   else{
+    echo "Errore non è post.";
+   }
+
     ?>
     </div>
 
