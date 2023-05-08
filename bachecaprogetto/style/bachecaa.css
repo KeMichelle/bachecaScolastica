@@ -193,8 +193,8 @@ nav a {
 }
 
 .body-b {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+
   grid-gap: 10%;
   width: 100%;
   height: fit-content;

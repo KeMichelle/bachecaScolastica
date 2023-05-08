@@ -37,10 +37,10 @@
       echo $_SESSION['username'] . '</div>';
       echo '</div>';
 
-      $connessione = "mysql:host=localhost;dbname=utenti;port=3306";
+      $connessione = "mysql:host=localhost;dbname=bacheca;port=3306";
 
       try{
-        $pdo = new PDO($connessione, 'icib_admin', '0987654321');
+        $pdo = new PDO($connessione, 'root', '');
 
         //l'id utente
         $current_id = $_SESSION['id_utente'];
@@ -54,31 +54,36 @@
     
         //prendi tutto dal database
         $ris = $stm->fetchAll(PDO::FETCH_ASSOC);
+
+
+        echo'<div class="body-b">';
         foreach($ris as $post){
-    ?>
-          <div class="body-b">
+        ?>
             <div class="postbox">
               <h2 class="titolo-box"><?php echo $post['titolo']; ?></h2>
               <div class="contenuto">
                 <p><?php echo $post['contenuto']; ?></p>
               </div>
               <div class="post-icons">
-                <button type="button" id="deletebtn">
-                  <img src="img/Delete.svg" alt="delete post">
-                </button>
-                <button type="button" id="editbtn">
-                  <img src="img/edit.svg" alt="edit post">
-                </button>
+              <button type="button" class="deletebtn">
+                <img src="img/Delete.svg" alt="delete post">
+              </button>
+              <button type="button" class="editbtn">
+                <img src="img/edit.svg" alt="edit post">
+              </button>
+
               </div>
             </div>
-          </div>
+          
     <?php
         }
+        echo'</div>';
       }
       catch(PDOException $errore){
         echo $errore;
       }
     }
     ?>
+    <script src="./scripts/editDeletee.js"></script>
   </body>
 </html>

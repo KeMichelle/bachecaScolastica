@@ -33,9 +33,9 @@
 
     // conettiti al database
     $servername = "localhost";
-    $username = "icib_admin";
-    $password = "0987654321";
-    $dbname = "utenti";
+    $username = "root";
+    $password = "";
+    $dbname = "bacheca";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {

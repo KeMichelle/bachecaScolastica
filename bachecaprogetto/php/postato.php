@@ -31,10 +31,10 @@
     session_start();
 
     //connessione al database con SQL
-    $servername= "localhost";
-    $username = "icib_admin";
-    $password = "0987654321";
-    $dbname = "utenti";
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "bacheca";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     if($conn->connect_error){
@@ -59,11 +59,13 @@
     }
     else{
         echo "Post fallito.";
+        echo "<button class='bottone' onclick=\"location.href='../bacheca.php'\">Torna sulla bacheca</button>";
     }
 
    }
    else{
     echo "Errore non è post.";
+    echo "<button class='bottone' onclick=\"location.href='../bacheca.php'\">Torna sulla bacheca</button>";
    }
 
     ?>

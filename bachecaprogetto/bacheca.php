@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./style/bacheca.css" />
+    <link rel="stylesheet" href="./style/bachecaa.css" />
 
     <title>Bacheca</title>
   </head>
@@ -65,10 +65,10 @@
 ';
 echo $pag;
 
-      $connessione = "mysql:host=localhost;dbname=utenti;port=3306";
+      $connessione = "mysql:host=localhost;dbname=bacheca;port=3306";
 
       try{
-        $pdo = new PDO($connessione, 'icib_admin', '0987654321');
+        $pdo = new PDO($connessione, 'root', '');
         $sql='SELECT titolo,contenuto,id_utente FROM post';
         $stm = $pdo->prepare($sql);
         $stm -> execute();
@@ -76,21 +76,25 @@ echo $pag;
         //prendi tutto dal database
         $ris = $stm->fetchAll(PDO::FETCH_ASSOC);
 
+
+        echo '<div class="body-b">';
         //si capisce
         foreach($ris as $post){
           ?>
-          <div class="body-b">
-          <div class="postbox">
-          <div class="utente"><?php echo $post['id_utente']; ?> </div>
-          <h2 class="titolo-box"><?php echo $post['titolo']; ?></h2>
-          <div class="contenuto">
-            <p><?php echo $post['contenuto']; ?></p>
-            <p><a href="#">Leggi di più &raquo;</a></p>
-          </div>
-        </div>  
+          
+            <div class="postbox">
+              <div class="utente"><?php echo $post['id_utente']; ?> </div>
+                <h2 class="titolo-box"><?php echo $post['titolo']; ?></h2>
+              <div class="contenuto">
+              <p><?php echo $post['contenuto']; ?></p>
+              <p><a href="#">Leggi di più &raquo;</a></p>
+              </div>
+            </div>  
+          
         <?php
               
         }
+        echo'</div>';
       }
       catch(PDOException $errore){
         echo $errore;
@@ -98,6 +102,5 @@ echo $pag;
     }
     ?>
 
-    <script src="./scripts/getStarted.js"></script>
   </body>
 </html>
