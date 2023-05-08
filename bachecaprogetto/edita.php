@@ -29,9 +29,6 @@
     <?php
     session_start();
 
-    
-
-
     if(isset($_SESSION['username'])==false){
       echo("Devi fare il login!");
       echo "<button onclick=\"location.href='failogin.php'\">Vai al login</button>";
@@ -43,14 +40,14 @@
         echo '</div>';
     }
 
-    $connessione = "mysql:host=localhost;dbname=bacheca;port=3306";
-    $pdo = new PDO($connessione, 'root', '');
+    $connessione = "mysql:host=localhost;dbname=utenti;port=3306";
+    $pdo = new PDO($connessione, 'icib_admin', '0987654321');
 
     //l'id utente
     $current_id = $_SESSION['id_utente'];
 
     //query dove prende l'id
-    $sql="SELECT titolo,contenuto,id_utente FROM post WHERE id_utente = :current_id";
+    $sql="SELECT id_post,titolo,contenuto,id_utente FROM post WHERE id_utente = :current_id";
     $stm = $pdo->prepare($sql);
 
     //prende l'id e lo esegue
@@ -66,7 +63,8 @@
     <div class="boxgrid">
         <div class="formgrid">
             <form action="../bachecaprogetto/php/editato.php" method="post">
-      
+
+            <input type="hidden" name="id_post" value="<?php echo $post['id_post']; ?>">
             <label for="title">Title:</label>
             <input type="text" id="titolo" name="titolo" value="<?php echo $post['titolo']; ?>" >
             <br><br>

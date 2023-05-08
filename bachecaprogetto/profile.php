@@ -37,10 +37,10 @@
       echo $_SESSION['username'] . '</div>';
       echo '</div>';
 
-      $connessione = "mysql:host=localhost;dbname=bacheca;port=3306";
+      $connessione = "mysql:host=localhost;dbname=utenti;port=3306";
 
       try{
-        $pdo = new PDO($connessione, 'root', '');
+        $pdo = new PDO($connessione, 'icib_admin', '0987654321');
 
         //l'id utente
         $current_id = $_SESSION['id_utente'];

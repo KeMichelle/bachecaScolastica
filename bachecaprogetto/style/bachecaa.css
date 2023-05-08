@@ -193,20 +193,21 @@ nav a {
 }
 
 .body-b {
-  display: flex;
-
-  grid-gap: 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two columns */
+  grid-gap: 6%;
   width: 100%;
   height: fit-content;
 }
 
 .postbox {
-  padding-left: 30%;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   height: fit-content;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .utente {

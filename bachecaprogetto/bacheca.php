@@ -65,10 +65,10 @@
 ';
 echo $pag;
 
-      $connessione = "mysql:host=localhost;dbname=bacheca;port=3306";
+      $connessione = "mysql:host=localhost;dbname=utenti;port=3306";
 
       try{
-        $pdo = new PDO($connessione, 'root', '');
+        $pdo = new PDO($connessione, 'icib_admin', '0987654321');
         $sql='SELECT titolo,contenuto,id_utente FROM post';
         $stm = $pdo->prepare($sql);
         $stm -> execute();

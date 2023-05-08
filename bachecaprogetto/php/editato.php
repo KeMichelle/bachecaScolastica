@@ -31,17 +31,19 @@
     <?php
     session_start();
     // Connessione al database
-    $conn = new PDO("mysql:host=localhost;dbname=bacheca", "root", "");
+    $conn = new PDO("mysql:host=localhost;dbname=utenti", "icib_admin", "0987654321");
 
     $id_utente = $_SESSION['id_utente'];
     $titolo = $_POST['titolo'];
     $contenuto = $_POST['contenuto'];
+    $id_post = $_POST['id_post'];
 
     // Update il post nel database
-    $stmt = $conn->prepare("UPDATE post SET titolo = :titolo, contenuto = :contenuto WHERE id_utente = :id_utente");
+    $stmt = $conn->prepare("UPDATE post SET titolo = :titolo, contenuto = :contenuto WHERE id_utente = :id_utente AND id_post = :id_post");
     $stmt->bindParam(':titolo', $titolo);
     $stmt->bindParam(':contenuto', $contenuto);
     $stmt->bindParam(':id_utente', $id_utente);
+    $stmt->bindParam(':id_post', $id_post);
 
     $stmt->execute();
 

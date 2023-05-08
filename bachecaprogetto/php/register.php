@@ -33,9 +33,9 @@
     <?php
     //connessione al database con SQL
     $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "bacheca";
+    $username = "icib_admin";
+    $password = "0987654321";
+    $dbname = "utenti";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     if($conn->connect_error){
