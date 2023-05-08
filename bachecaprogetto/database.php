@@ -19,7 +19,7 @@
           <ul>
             <li><a href="bacheca.php">Blog</a></li>
             <li><a href="post.php">Post</a></li>
-            <li><a href="database.php">About</a></li>
+            <li><a href="database.php">DataBase</a></li>
             <li><a href="profile.php">Profilo</a></li>
           </ul>
         </nav>
@@ -29,12 +29,6 @@
     <div class="databasecontainer">
     <?php
     session_start();
-
-    //connessione al database con SQL
-    $servername = "localhost";
-    $username = "icib_admin";
-    $password = "0987654321";
-    $dbname = "utenti";
 
     $conn = new PDO("mysql:host=localhost;dbname=utenti", "icib_admin", "0987654321");
     

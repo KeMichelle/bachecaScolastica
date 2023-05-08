@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,300,500,600");
+
+/*Style Guide*/
+:root {
+  --black: rgba(0, 0, 0, 1);
+  --japonica: rgba(221, 125, 98, 1);
+  --peach-cream: rgba(255, 240, 217, 1);
+  --white: rgba(255, 255, 255, 1);
+
+  --font-size-s: 24px;
+  --font-size-m: 32px;
+  --font-size-l: 40px;
+  --font-size-xl: 48px;
+  --font-size-xxl: 64px;
+  --font-size-xxxl: 80px;
+
+  --font-family-poppins: "Poppins";
+}
+
+* {
+  border: 0;
+  margin: 0;
+  color: var(--black);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  font-weight: 500;
+  text-align: center;
+  position: relative;
+  background-color: var(--japonica);
+}
+
+.hidden,
+.hidden * {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.header {
+  align-items: center;
+  background-color: var(--japonica);
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  position: relative;
+  border: 0px;
+  width: 100%;
+}
+
+.sections {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  width: 35vw;
+  padding-left: 15vw;
+}
+
+nav {
+  list-style: none;
+  font-size: var(--font-size-s);
+}
+
+nav li {
+  display: inline-block;
+  font-size: var(--font-size-s);
+}
+
+nav a {
+  text-decoration: none;
+  padding-right: 4vw;
+  color: var(--black);
+  font-size: var(--font-size-s);
+}
+
+.titleBacheca {
+  color: var(--peach-cream);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxl);
+  font-weight: 400;
+  letter-spacing: 0;
+  position: relative;
+  width: fit-content;
+  padding-left: 2vw;
+  width: 47vw;
+}
+
+button {
+  background-color: var(--peach-cream);
+  border-radius: 6px;
+  height: 7vh;
+  width: fit-content;
+  text-align: center;
+  font-size: var(--font-size-s);
+  font-weight: 300;
+  color: var(--black);
+}
+
+.databasecontainer {
+  align-items: center;
+  padding-top: 30vh;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
