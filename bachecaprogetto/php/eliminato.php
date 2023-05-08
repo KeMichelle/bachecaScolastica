@@ -34,18 +34,16 @@
     //connessione al database con SQL
     $conn = new PDO("mysql:host=localhost;dbname=utenti", "icib_admin", "0987654321");
 
-    //prendi il submit dal form
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id_post"])) {
-        $id_post = $_POST["id_post"];
-        $id_utente = $_SESSION['id_utente'];
+    $id_utente = $_SESSION['id_utente'];
+    $id_post = $_POST['id_post'];
     
-    
+        
         //query per eliminare il post
         $stmt = $conn->prepare("DELETE FROM post WHERE id_post = :id_post AND id_utente = :id_utente");
         $stmt->bindParam(':id_utente', $id_utente, PDO::PARAM_INT);
         $stmt->bindParam(':id_post', $id_post, PDO::PARAM_INT);
         $stmt->execute();
-
+     
     
         if($stmt->rowCount() > 0){
             echo "Post eliminato!";
@@ -56,11 +54,6 @@
             echo "<button class='bottone' onclick=\"location.href='../bacheca.php'\">Torna sulla bacheca</button>";
         }
     
-    }
-    else{
-        echo "Errore non è stato specificato il post da eliminare.";
-        echo "<button class='bottone' onclick=\"location.href='../bacheca.php'\">Torna sulla bacheca</button>";
-    }
     ?>
     
     </div>
