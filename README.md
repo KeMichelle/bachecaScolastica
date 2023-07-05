@@ -11,5 +11,3 @@ Per gestire tutti i dati degli utenti e dei loro "post", il progetto utilizza un
 Infine, utilizzando il linguaggio di scripting JavaScript, il progetto consente all'utente di interagire con la piattaforma in modo dinamico, ad esempio con validazioni di input, feedback sulle azioni dell'utente e aggiornamento della pagina senza doverla ricaricare.
 
 In sintesi, il mio progetto scolastico utilizza diverse tecnologie web per creare una piattaforma di pubblicazione di commenti, che consente agli utenti di registrarsi, accedere, pubblicare e modificare i propri "post" in modo dinamico e sicuro.
-
-Questo progetto è ancora in fase di sviluppo
